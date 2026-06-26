@@ -1,0 +1,51 @@
+# 0 "arch/arm/boot/dts/ti/omap/BONE-LED-P9-42.dtso"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "arch/arm/boot/dts/ti/omap/BONE-LED-P9-42.dtso"
+
+
+
+
+
+/dts-v1/;
+/plugin/;
+
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h" 1
+# 10 "arch/arm/boot/dts/ti/omap/BONE-LED-P9-42.dtso" 2
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h" 1
+# 9 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h"
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/omap.h" 1
+# 10 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h" 2
+# 11 "arch/arm/boot/dts/ti/omap/BONE-LED-P9-42.dtso" 2
+
+
+
+
+&{/chosen} {
+ overlays {
+  BONE-LED-P9-42.kernel = "Tue Jun 16 11:21:58 2026";
+ };
+};
+
+&am33xx_pinmux {
+ bb_gpio_p9_42_pins: pinmux_bb_gpio_p9_42_pins {
+  pinctrl-single,pins = <
+   ((((0x964)) & 0xffff) - (0x0800)) (0) (7)
+  >;
+ };
+};
+
+&{/} {
+ leds {
+  pinctrl-names = "default";
+  pinctrl-0 = <&bb_gpio_p9_42_pins>;
+
+  compatible = "gpio-leds";
+
+  pin@942 {
+   label = "P9_42";
+   gpios = <&gpio0 07 0>;
+   default-state = "keep";
+  };
+ };
+};

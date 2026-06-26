@@ -1,0 +1,4 @@
+BB-I2C2-RTC-DS3231.o: arch/arm/boot/dts/ti/omap/BB-I2C2-RTC-DS3231.dtso \
+ scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h \
+ scripts/dtc/include-prefixes/dt-bindings/pinctrl/omap.h \
+ scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h

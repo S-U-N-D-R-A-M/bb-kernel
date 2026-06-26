@@ -1,0 +1,6 @@
+BB-NHDMI-IT66121-00A0.o: \
+ arch/arm/boot/dts/ti/omap/BB-NHDMI-IT66121-00A0.dtso \
+ scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h \
+ scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h \
+ scripts/dtc/include-prefixes/dt-bindings/pinctrl/omap.h \
+ scripts/dtc/include-prefixes/dt-bindings/interrupt-controller/irq.h

@@ -1,0 +1,14 @@
+am335x-bonegreen-eco.o: \
+ arch/arm/boot/dts/ti/omap/am335x-bonegreen-eco.dts \
+ arch/arm/boot/dts/ti/omap/am33xx.dtsi \
+ scripts/dtc/include-prefixes/dt-bindings/bus/ti-sysc.h \
+ scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h \
+ scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h \
+ scripts/dtc/include-prefixes/dt-bindings/pinctrl/omap.h \
+ scripts/dtc/include-prefixes/dt-bindings/clock/am3.h \
+ arch/arm/boot/dts/ti/omap/am33xx-l4.dtsi \
+ arch/arm/boot/dts/ti/omap/am33xx-clocks.dtsi \
+ arch/arm/boot/dts/ti/omap/am335x-bone-common.dtsi \
+ arch/arm/boot/dts/ti/omap/am335x-bbb-bone-buses.dtsi \
+ arch/arm/boot/dts/ti/omap/am335x-bonegreen-common.dtsi \
+ scripts/dtc/include-prefixes/dt-bindings/net/ti-dp83867.h

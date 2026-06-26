@@ -1,0 +1,37 @@
+# 0 "arch/arm/boot/dts/ti/omap/BBORG_COMMS-00A2.dtso"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "arch/arm/boot/dts/ti/omap/BBORG_COMMS-00A2.dtso"
+# 17 "arch/arm/boot/dts/ti/omap/BBORG_COMMS-00A2.dtso"
+/dts-v1/;
+/plugin/;
+
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h" 1
+# 21 "arch/arm/boot/dts/ti/omap/BBORG_COMMS-00A2.dtso" 2
+
+
+
+
+&{/chosen} {
+ overlays {
+  BBORG_COMMS-00A2.kernel = "Tue Jun 16 11:21:58 2026";
+ };
+};
+
+
+
+
+&ocp {
+ P9_24_pinmux { status = "disabled"; };
+ P9_26_pinmux { status = "disabled"; };
+ P9_13_pinmux { status = "disabled"; };
+ P9_11_pinmux { status = "disabled"; };
+};
+
+&bone_can_1 {
+ status = "okay";
+};
+
+&bone_uart_4 {
+ status = "okay";
+};

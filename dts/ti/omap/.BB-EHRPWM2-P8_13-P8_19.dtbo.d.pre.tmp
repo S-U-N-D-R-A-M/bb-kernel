@@ -1,0 +1,4 @@
+BB-EHRPWM2-P8_13-P8_19.o: \
+ arch/arm/boot/dts/ti/omap/BB-EHRPWM2-P8_13-P8_19.dtso \
+ scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h \
+ scripts/dtc/include-prefixes/dt-bindings/pinctrl/omap.h

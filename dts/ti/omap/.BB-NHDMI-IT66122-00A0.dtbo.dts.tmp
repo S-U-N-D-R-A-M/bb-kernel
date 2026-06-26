@@ -1,0 +1,173 @@
+# 0 "arch/arm/boot/dts/ti/omap/BB-NHDMI-IT66122-00A0.dtso"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "arch/arm/boot/dts/ti/omap/BB-NHDMI-IT66122-00A0.dtso"
+
+
+
+
+
+/dts-v1/;
+/plugin/;
+
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h" 1
+# 10 "arch/arm/boot/dts/ti/omap/BB-NHDMI-IT66122-00A0.dtso" 2
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h" 1
+# 9 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h"
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/omap.h" 1
+# 10 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h" 2
+# 11 "arch/arm/boot/dts/ti/omap/BB-NHDMI-IT66122-00A0.dtso" 2
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/interrupt-controller/irq.h" 1
+# 12 "arch/arm/boot/dts/ti/omap/BB-NHDMI-IT66122-00A0.dtso" 2
+
+
+
+
+&{/chosen} {
+ overlays {
+  BB-NHDMI-IT66122-00A0.kernel = "Tue Jun 16 11:21:58 2026";
+ };
+};
+
+
+
+
+&ocp {
+ P8_45_pinmux { status = "disabled"; };
+ P8_46_pinmux { status = "disabled"; };
+ P8_43_pinmux { status = "disabled"; };
+ P8_44_pinmux { status = "disabled"; };
+ P8_41_pinmux { status = "disabled"; };
+ P8_42_pinmux { status = "disabled"; };
+ P8_39_pinmux { status = "disabled"; };
+ P8_40_pinmux { status = "disabled"; };
+ P8_37_pinmux { status = "disabled"; };
+ P8_38_pinmux { status = "disabled"; };
+ P8_36_pinmux { status = "disabled"; };
+ P8_34_pinmux { status = "disabled"; };
+ P8_35_pinmux { status = "disabled"; };
+ P8_33_pinmux { status = "disabled"; };
+ P8_31_pinmux { status = "disabled"; };
+ P8_32_pinmux { status = "disabled"; };
+ P8_27_pinmux { status = "disabled"; };
+ P8_29_pinmux { status = "disabled"; };
+ P8_28_pinmux { status = "disabled"; };
+ P8_30_pinmux { status = "disabled"; };
+};
+
+&{/} {
+ connector-hdmi {
+  compatible = "hdmi-connector";
+  label = "hdmi";
+  type = "a";
+  port {
+   hdmi_connector_in: endpoint {
+    remote-endpoint = <&it66122_out>;
+   };
+  };
+ };
+
+ it66122_vcn18_fixed: fixedregulator1 {
+  compatible = "regulator-fixed";
+  regulator-name = "it66122_vcn18_fixed";
+  regulator-min-microvolt = <1800000>;
+  regulator-max-microvolt = <1800000>;
+ };
+};
+
+&am33xx_pinmux {
+ nxp_hdmi_bonelt_pins: nxp-hdmi-bonelt-pins {
+  pinctrl-single,pins = <
+   ((((0x9b0)) & 0xffff) - (0x0800)) (0) (3)
+   ((((0x8a0)) & 0xffff) - (0x0800)) (((1 << 3))) (0)
+   ((((0x8a4)) & 0xffff) - (0x0800)) (((1 << 3))) (0)
+   ((((0x8a8)) & 0xffff) - (0x0800)) (((1 << 3))) (0)
+   ((((0x8ac)) & 0xffff) - (0x0800)) (((1 << 3))) (0)
+   ((((0x8b0)) & 0xffff) - (0x0800)) (((1 << 3))) (0)
+   ((((0x8b4)) & 0xffff) - (0x0800)) (((1 << 3))) (0)
+   ((((0x8b8)) & 0xffff) - (0x0800)) (((1 << 3))) (0)
+   ((((0x8bc)) & 0xffff) - (0x0800)) (((1 << 3))) (0)
+   ((((0x8c0)) & 0xffff) - (0x0800)) (((1 << 3))) (0)
+   ((((0x8c4)) & 0xffff) - (0x0800)) (((1 << 3))) (0)
+   ((((0x8c8)) & 0xffff) - (0x0800)) (((1 << 3))) (0)
+   ((((0x8cc)) & 0xffff) - (0x0800)) (((1 << 3))) (0)
+   ((((0x8d0)) & 0xffff) - (0x0800)) (((1 << 3))) (0)
+   ((((0x8d4)) & 0xffff) - (0x0800)) (((1 << 3))) (0)
+   ((((0x8d8)) & 0xffff) - (0x0800)) (((1 << 3))) (0)
+   ((((0x8dc)) & 0xffff) - (0x0800)) (((1 << 3))) (0)
+   ((((0x8e0)) & 0xffff) - (0x0800)) (0) (0)
+   ((((0x8e4)) & 0xffff) - (0x0800)) (0) (0)
+   ((((0x8e8)) & 0xffff) - (0x0800)) (0) (0)
+   ((((0x8ec)) & 0xffff) - (0x0800)) (0) (0)
+  >;
+ };
+
+ hdmi_gpio_pins_default: hdmi-gpio-default-pins {
+  pinctrl-single,pins = <
+   ((((0x864)) & 0xffff) - (0x0800)) (((1 << 5) | (1 << 4))) (7)
+   ((((0x96c)) & 0xffff) - (0x0800)) (((1 << 4))) (7)
+  >;
+ };
+};
+
+&lcdc {
+ status = "okay";
+ pinctrl-names = "default";
+ pinctrl-0 = <&nxp_hdmi_bonelt_pins>;
+
+
+
+
+
+
+ blue-and-red-wiring = "straight";
+
+ port {
+  lcdc_0: endpoint@0 {
+   remote-endpoint = <&it66122_in>;
+  };
+ };
+};
+
+&i2c0 {
+ #address-cells = <1>;
+ #size-cells = <0>;
+
+ status = "okay";
+ it66122: bridge-hdmi@4c {
+  compatible = "ite,it66122";
+  reg = <0x4c>;
+  pinctrl-names = "default";
+  pinctrl-0 = <&hdmi_gpio_pins_default>;
+
+  vcn33-supply = <&vmmcsd_fixed>;
+  vcn18-supply = <&it66122_vcn18_fixed>;
+
+  reset-gpios = <&gpio1 9 1>;
+  interrupt-parent = <&gpio1>;
+  interrupts = <25 2>;
+  #sound-dai-cells = <0>;
+
+  ports {
+   #address-cells = <1>;
+   #size-cells = <0>;
+
+   port@0 {
+    reg = <0>;
+
+    it66122_in: endpoint {
+     bus-width = <24>;
+     remote-endpoint = <&lcdc_0>;
+    };
+   };
+
+   port@1 {
+    reg = <1>;
+
+    it66122_out: endpoint {
+     remote-endpoint = <&hdmi_connector_in>;
+    };
+   };
+  };
+ };
+};

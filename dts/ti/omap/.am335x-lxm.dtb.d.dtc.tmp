@@ -1,0 +1,1 @@
+arch/arm/boot/dts/ti/omap/am335x-lxm.dtb: arch/arm/boot/dts/ti/omap/.am335x-lxm.dtb.dts.tmp arch/arm/boot/dts/ti/omap/../../tps65910.dtsi

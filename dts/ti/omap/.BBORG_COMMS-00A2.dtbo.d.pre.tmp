@@ -1,0 +1,2 @@
+BBORG_COMMS-00A2.o: arch/arm/boot/dts/ti/omap/BBORG_COMMS-00A2.dtso \
+ scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h

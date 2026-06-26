@@ -1,0 +1,3 @@
+BB-EQEP2B.o: arch/arm/boot/dts/ti/omap/BB-EQEP2B.dtso \
+ scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h \
+ scripts/dtc/include-prefixes/dt-bindings/pinctrl/omap.h

@@ -1,0 +1,47 @@
+# 0 "arch/arm/boot/dts/ti/omap/BB-EQEP2.dtso"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "arch/arm/boot/dts/ti/omap/BB-EQEP2.dtso"
+
+
+
+
+
+/dts-v1/;
+/plugin/;
+
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h" 1
+# 9 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h"
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/omap.h" 1
+# 10 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h" 2
+# 10 "arch/arm/boot/dts/ti/omap/BB-EQEP2.dtso" 2
+
+
+
+
+&{/chosen} {
+ overlays {
+  BB-EQEP2.kernel = "Tue Jun 16 11:21:58 2026";
+ };
+};
+
+&am33xx_pinmux {
+ eqep2_pins: pinmux_eqep2_pins {
+  pinctrl-single,pins = <
+   ((((0x8b0)) & 0xffff) - (0x0800)) (((1 << 5) | (1 << 3)) | 3) (0)
+   ((((0x8b4)) & 0xffff) - (0x0800)) (((1 << 5) | (1 << 3)) | 3) (0)
+   ((((0x8b8)) & 0xffff) - (0x0800)) (((1 << 5) | (1 << 3)) | 3) (0)
+   ((((0x8bc)) & 0xffff) - (0x0800)) (((1 << 5) | (1 << 3)) | 3) (0)
+  >;
+ };
+};
+
+&epwmss2 {
+ status = "okay";
+};
+
+&eqep2 {
+ status = "okay";
+ pinctrl-names = "default";
+ pinctrl-0 = <&eqep2_pins>;
+};

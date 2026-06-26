@@ -1,0 +1,22 @@
+savedcmd_arch/arm/boot/dts/ti/omap/am335x-sancloud-bbe-lite.dtb := gcc -E -Wp,-MMD,arch/arm/boot/dts/ti/omap/.am335x-sancloud-bbe-lite.dtb.d.pre.tmp -nostdinc -I ./scripts/dtc/include-prefixes -undef -D__DTS__ -x assembler-with-cpp -o arch/arm/boot/dts/ti/omap/.am335x-sancloud-bbe-lite.dtb.dts.tmp arch/arm/boot/dts/ti/omap/am335x-sancloud-bbe-lite.dts ; ./scripts/dtc/dtc -o arch/arm/boot/dts/ti/omap/am335x-sancloud-bbe-lite.dtb -b 0 -iarch/arm/boot/dts/ti/omap/ -i./scripts/dtc/include-prefixes -@ -Wno-unique_unit_address -Wno-unit_address_vs_reg -Wno-avoid_unnecessary_addr_size -Wno-alias_paths -Wno-graph_child_address -Wno-interrupt_map -Wno-simple_bus_reg   -d arch/arm/boot/dts/ti/omap/.am335x-sancloud-bbe-lite.dtb.d.dtc.tmp arch/arm/boot/dts/ti/omap/.am335x-sancloud-bbe-lite.dtb.dts.tmp ; cat arch/arm/boot/dts/ti/omap/.am335x-sancloud-bbe-lite.dtb.d.pre.tmp arch/arm/boot/dts/ti/omap/.am335x-sancloud-bbe-lite.dtb.d.dtc.tmp > arch/arm/boot/dts/ti/omap/.am335x-sancloud-bbe-lite.dtb.d 
+
+source_arch/arm/boot/dts/ti/omap/am335x-sancloud-bbe-lite.dtb := arch/arm/boot/dts/ti/omap/am335x-sancloud-bbe-lite.dts
+
+deps_arch/arm/boot/dts/ti/omap/am335x-sancloud-bbe-lite.dtb := \
+  arch/arm/boot/dts/ti/omap/am33xx.dtsi \
+  scripts/dtc/include-prefixes/dt-bindings/bus/ti-sysc.h \
+  scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h \
+  scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h \
+  scripts/dtc/include-prefixes/dt-bindings/pinctrl/omap.h \
+  scripts/dtc/include-prefixes/dt-bindings/clock/am3.h \
+  arch/arm/boot/dts/ti/omap/am33xx-l4.dtsi \
+  arch/arm/boot/dts/ti/omap/am33xx-clocks.dtsi \
+  arch/arm/boot/dts/ti/omap/am335x-bone-common.dtsi \
+  arch/arm/boot/dts/ti/omap/am335x-bbb-bone-buses.dtsi \
+  arch/arm/boot/dts/ti/omap/am335x-boneblack-common.dtsi \
+  arch/arm/boot/dts/ti/omap/am335x-sancloud-bbe-common.dtsi \
+  arch/arm/boot/dts/ti/omap/../../tps65217.dtsi \
+
+arch/arm/boot/dts/ti/omap/am335x-sancloud-bbe-lite.dtb: $(deps_arch/arm/boot/dts/ti/omap/am335x-sancloud-bbe-lite.dtb)
+
+$(deps_arch/arm/boot/dts/ti/omap/am335x-sancloud-bbe-lite.dtb):

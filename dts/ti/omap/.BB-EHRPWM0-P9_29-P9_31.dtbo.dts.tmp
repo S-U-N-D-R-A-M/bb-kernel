@@ -1,0 +1,45 @@
+# 0 "arch/arm/boot/dts/ti/omap/BB-EHRPWM0-P9_29-P9_31.dtso"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "arch/arm/boot/dts/ti/omap/BB-EHRPWM0-P9_29-P9_31.dtso"
+
+
+
+
+
+/dts-v1/;
+/plugin/;
+
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h" 1
+# 9 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h"
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/omap.h" 1
+# 10 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h" 2
+# 10 "arch/arm/boot/dts/ti/omap/BB-EHRPWM0-P9_29-P9_31.dtso" 2
+
+
+
+
+&{/chosen} {
+ overlays {
+  BB-EHRPWM0-P9_29-P9_31.kernel = "Tue Jun 16 11:21:58 2026";
+ };
+};
+
+&am33xx_pinmux {
+ epwmss0_pins: pinmux_epwmss0_pins {
+  pinctrl-single,pins = <
+   ((((0x990)) & 0xffff) - (0x0800)) (((1 << 3))) (1)
+   ((((0x994)) & 0xffff) - (0x0800)) (((1 << 3))) (1)
+  >;
+ };
+};
+
+&epwmss0 {
+ status = "okay";
+};
+
+&ehrpwm0 {
+ status = "okay";
+ pinctrl-names = "default";
+ pinctrl-0 = <&epwmss0_pins>;
+};

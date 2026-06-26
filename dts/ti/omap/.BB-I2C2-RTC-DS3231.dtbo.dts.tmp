@@ -1,0 +1,44 @@
+# 0 "arch/arm/boot/dts/ti/omap/BB-I2C2-RTC-DS3231.dtso"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "arch/arm/boot/dts/ti/omap/BB-I2C2-RTC-DS3231.dtso"
+# 20 "arch/arm/boot/dts/ti/omap/BB-I2C2-RTC-DS3231.dtso"
+/dts-v1/;
+/plugin/;
+
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h" 1
+# 9 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h"
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/omap.h" 1
+# 10 "./scripts/dtc/include-prefixes/dt-bindings/pinctrl/am33xx.h" 2
+# 24 "arch/arm/boot/dts/ti/omap/BB-I2C2-RTC-DS3231.dtso" 2
+# 1 "./scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h" 1
+# 25 "arch/arm/boot/dts/ti/omap/BB-I2C2-RTC-DS3231.dtso" 2
+
+
+
+
+&{/chosen} {
+ overlays {
+  BB-I2C2-RTC-DS3231.kernel = "Tue Jun 16 11:21:58 2026";
+ };
+};
+
+&{/} {
+ aliases {
+  rtc0 = &extrtc;
+
+  rtc1 = "/ocp/interconnect@44c00000/segment@200000/target-module@3e000/rtc@0";
+ };
+};
+
+&i2c2 {
+ status = "okay";
+ #address-cells = <1>;
+ #size-cells = <0>;
+
+ extrtc: ds3231@68 {
+  status = "okay";
+  compatible = "maxim,ds3231";
+  reg = <0x68>;
+ };
+};
